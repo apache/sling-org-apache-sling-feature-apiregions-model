@@ -165,6 +165,19 @@ public final class ApiRegion implements Iterable<String> {
     }
 
     /**
+     * Checks if the input API is stored only in this region.
+     *
+     * @param api the API package to remove
+     * @return true if the API is stored in this region, false otherwise.
+     */
+    public boolean exports(String api) {
+        if (isEmpty(api)) {
+            return false;
+        }
+        return apis.contains(api);
+    }
+
+    /**
      * Check is the region contains, across the whole region hierarchy,
      * if the input API package is contained.
      * 
@@ -176,7 +189,7 @@ public final class ApiRegion implements Iterable<String> {
             return false;
         }
 
-        if (apis.contains(api)) {
+        if (exports(api)) {
             return true;
         }
 
