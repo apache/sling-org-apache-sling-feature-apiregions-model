@@ -40,6 +40,10 @@ public final class ApiRegions implements Iterable<ApiRegion> {
             throw new IllegalArgumentException("Impossible to create a new API Region without specifying a valid name");
         }
 
+        if (getByName(regionName) != null) {
+            throw new IllegalArgumentException("API Region '" + regionName + "' already exists, please specifying a different valid name");
+        }
+
         ApiRegion parent = regions.isEmpty() ? null : regions.peek(); // null parent means 'root' in the hierarchy
         ApiRegion newRegion = new ApiRegion(regionName, parent);
         return regions.push(newRegion);

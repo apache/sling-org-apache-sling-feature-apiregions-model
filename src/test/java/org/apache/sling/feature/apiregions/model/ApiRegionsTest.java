@@ -110,4 +110,10 @@ public class ApiRegionsTest {
         assertEquals(expected, actual);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void twoRegionsWithSameNameNotAccepted() {
+        apiRegions.addNew("granpa");
+        apiRegions.addNew("granpa");
+    }
+
 }
