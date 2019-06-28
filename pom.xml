@@ -36,6 +36,7 @@
   <properties>
     <sling.java.version>8</sling.java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <bnd.baseline.skip>true</bnd.baseline.skip>
   </properties>
 
   <scm>
