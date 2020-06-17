@@ -1,0 +1,8 @@
+github:
+  description: "Apache Sling Feature Model API Regions"
+  homepage: "https://sling.apache.org/"
+  labels:
+    - java
+    - sling
+    - osgi
+    - osgi-feature-model
